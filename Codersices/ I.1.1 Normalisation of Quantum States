@@ -7,5 +7,5 @@ def normalize_state(alpha, beta):
     norm = np.sqrt(abs(alpha) ** 2 + abs(beta) ** 2)
     return 1/norm * np.array([alpha, beta])
 
-# Print for any number pair e.g. 2 and 3
+# Print for any number pair e.g. 2 & 3
 print(normalize_state(2,3)) 
