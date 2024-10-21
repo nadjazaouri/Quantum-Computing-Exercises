@@ -1,0 +1,11 @@
+# The vector representations of |0> and |1> for convenience
+ket_0 = np.array([1, 0])
+ket_1 = np.array([0, 1])
+
+def normalize_state(alpha, beta):
+
+    norm = np.sqrt(abs(alpha) ** 2 + abs(beta) ** 2)
+    return 1/norm * np.array([alpha, beta])
+
+# Print for any number pair e.g. 2 and 3
+print(normalize_state(2,3)) 
