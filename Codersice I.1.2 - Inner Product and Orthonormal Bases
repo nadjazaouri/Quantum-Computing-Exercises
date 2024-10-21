@@ -1,0 +1,23 @@
+# Given states
+state_1 = np.array([0.8, 0.6])
+state_2 = np.array([1 / np.sqrt(2), 1j / np.sqrt(2)]) 
+
+# Computing the inner product of two states
+def inner_product(state_1, state_2):
+    conj_1 = state_1.conjugate() # Important to define the conjugate within the inner product definition to avoid problems when the input state_1 is a different array
+    return (conj_1[0] * state_2[0] + conj_1[1] * state_2[1])
+
+
+# Testing orthogonality
+ket_0 = np.array([1, 0])
+ket_1 = np.array([0, 1])
+
+print(f"<0|0> = {inner_product(ket_0, ket_0)}")
+print(f"<0|1> = {inner_product(ket_0, ket_1)}")
+print(f"<1|0> = {inner_product(ket_1, ket_0)}")
+print(f"<1|1> = {inner_product(ket_1, ket_1)}")
+
+# Testing inner product of example states
+print(inner_product(state_1,state_2))
+
+
