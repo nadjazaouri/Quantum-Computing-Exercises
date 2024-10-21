@@ -1,0 +1,19 @@
+# Given state
+state = np.array([0.8, 0.6])
+
+# Simulation of a quantum measurement process
+def measure_state(state, num_meas):
+
+    # Calculate probabilities for each component of the state
+    prob = np.array([np.abs(state[i]) ** 2 for i in range(len(state))])  # A list comprehension for dynamic sizing (not necessary, useful when having multiple arguments)
+
+    # Generate measurements based on the calculated probabilities
+    measurements = np.random.choice(np.array([0, 1]), size=num_meas, p=prob)  # Use correct array syntax and p for probabilities
+    return measurements
+
+# Call the function to get measurements
+num_meas = 10  # Number of measurements to simulate
+measurements = measure_state(state, num_meas)
+
+# Print the results
+print(measurements)
