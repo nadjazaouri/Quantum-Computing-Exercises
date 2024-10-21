@@ -1,0 +1,10 @@
+# Applying a quantum operation.
+def apply_u(state):
+
+        U = np.array([[1, 1], [1, -1]]) / np.sqrt(2) # Hadamard gate aka unitary transformation of state
+        return np.dot(U,state) # Resulting state after the applied quantum operation U.
+
+# Example
+U = np.array([[0, 1], [1, 0]])
+state = np.array([0.8, 0.6])
+print(apply_u(state))
