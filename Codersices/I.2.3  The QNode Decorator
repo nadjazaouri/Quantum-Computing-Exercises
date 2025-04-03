@@ -1,9 +1,7 @@
 dev = qml.device("default.qubit", wires=3)
 
-# Applying the decorator to the quantum function
-
+# Apply the decorator to the quantum function
 @qml.qnode(dev)
-
 def my_circuit(theta, phi, omega):
     qml.RX(theta, wires=0)
     qml.RY(phi, wires=1)
@@ -15,5 +13,5 @@ def my_circuit(theta, phi, omega):
 
 theta, phi, omega = 0.1, 0.2, 0.3
 
-# Running the circuit
+# Run the circuit
 my_circuit(theta, phi, omega)
