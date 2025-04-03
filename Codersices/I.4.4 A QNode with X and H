@@ -1,0 +1,21 @@
+dev = qml.device("default.qubit", wires=1)
+
+@qml.qnode(dev)
+def apply_hxh(state):
+    
+    # KEEP THE QUBIT IN |0> OR CHANGE IT TO |1> DEPENDING ON state
+    if state == 1:
+        qml.PauliX(wires=0)
+    # APPLY THE HADAMARD
+    qml.Hadamard(wires=0)
+    qml.PauliX(wires=0)
+    # APPLY THE HADAMARD
+    qml.Hadamard(wires=0)
+    # RETURN THE STATE
+
+    return qml.state()
+
+
+# Print your results
+print(apply_hxh(0))
+print(apply_hxh(1))
