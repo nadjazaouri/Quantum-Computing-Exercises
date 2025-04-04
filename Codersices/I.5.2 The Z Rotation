@@ -1,0 +1,12 @@
+dev = qml.device("default.qubit", wires=1)
+
+
+@qml.qnode(dev)
+def fake_z():
+   
+    # CREATE THE |+> STATE
+    qml.Hadamard(wires=0)
+    # APPLY RZ
+    qml.RZ(np.pi, wires=0)
+    # RETURN THE STATE
+    return qml.state()
